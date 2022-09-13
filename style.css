@@ -506,6 +506,16 @@ button.btn:hover {
 	}
 }
 
+@media only screen and (max-width: 370px) {
+	.title {
+		font-size: 15px;
+	}
+
+	.title span {
+		font-size: 18px;
+	}
+}
+
 @media only screen and (max-width: 355px) {
 	.title {
 		font-size: 14px;
