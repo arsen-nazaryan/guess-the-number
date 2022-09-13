@@ -17,12 +17,13 @@ function numSlice() {
 
 let shake = "shake";
 let zoom = "zoom";
+let playAgain = "start_again"
 let totalTime = 500;
 
-function addAndRemove(className, totalTime) {
-    hiddenNum.classList.add(className);
+function addAndRemove(className, totalTime, tagName) {
+    tagName.classList.add(className);
     setTimeout(function() {
-        hiddenNum.classList.remove(className);
+        tagName.classList.remove(className);
     }, totalTime);
 }
 
@@ -33,19 +34,25 @@ document.querySelector(".check").addEventListener("click", function() {
         if (inputNumVal < randomNum) {
             chance.textContent = `${--totalChance}`;
             guessingNum.textContent = "Too Low!";
-            addAndRemove(shake, totalTime);
+            addAndRemove(shake, totalTime, hiddenNum);
+
         } else if (inputNumVal > randomNum) {
             chance.textContent = `${--totalChance}`;
             guessingNum.textContent = "Too Big";
-            addAndRemove(shake, totalTime);
+            addAndRemove(shake, totalTime, hiddenNum);
         } else {
             hiddenNum.textContent = `${randomNum}`;
             highScore.textContent = `${++highScoreNum}`;
-            addAndRemove(zoom, totalTime * 6);
+            addAndRemove(zoom, totalTime * 5, hiddenNum);
             guessingNum.textContent = "You Win!";
-            guessingNum.style.fontSize = '24px';
+            /*            guessingNum.style.fontSize = '24px';
+                        guessingNum.style.color = '#dcedcc';*/
+            guessingNum.style.cssText = `
+              font-size: 24px; 
+              color: #dcedcc;
+            `;
             document.querySelector(".check").disabled = true;
-            startBtn.classList.add('start_again');
+            addAndRemove(playAgain, totalTime * 16, startBtn);
         }
     }
 });
@@ -54,7 +61,10 @@ startBtn.addEventListener("click", function() {
     document.querySelector(".check").disabled = false;
     chance.textContent = "20";
     hiddenNum.textContent = "?";
-    guessingNum.style.fontSize = 'initial';
+    guessingNum.style.cssText = `
+              font-size: unset; 
+              color: unset;
+            `;
     guessingNum.textContent = "Start Guessing...";
     inputNum.value = "";
     randomNum = Math.ceil(Math.random() * 20);
