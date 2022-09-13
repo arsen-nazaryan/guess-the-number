@@ -9,9 +9,9 @@ let randomNum = Math.ceil(Math.random() * 20);
 let totalChance = 20;
 let highScoreNum = 0;
 
-inputNum.addEventListener("input", amountofUnits);
+inputNum.addEventListener("input", numSlice);
 
-function amountofUnits() {
+function numSlice() {
     this.value = this.value.replace(/[^\d]/, "").slice(0, 2);
 }
 
@@ -45,11 +45,7 @@ document.querySelector(".check").addEventListener("click", function() {
             guessingNum.textContent = "You Win!";
             guessingNum.style.fontSize = '24px';
             document.querySelector(".check").disabled = true;
-            /*setInterval(function() {
-                startBtn.classList.add('start_again')
-            }, 1500);*/
-            startBtn.classList.add('start_again')
-            
+            startBtn.classList.add('start_again');
         }
     }
 });
@@ -59,7 +55,7 @@ startBtn.addEventListener("click", function() {
     chance.textContent = "20";
     hiddenNum.textContent = "?";
     guessingNum.style.fontSize = 'initial';
-    guessingNum.textContent = "Start guessing...";
+    guessingNum.textContent = "Start Guessing...";
     inputNum.value = "";
     randomNum = Math.ceil(Math.random() * 20);
 });
