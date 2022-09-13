@@ -288,9 +288,9 @@ button.btn {
 	color: #fff;
 	cursor: pointer;
 	font-family: "Press Start 2P", sans-serif;
-	-webkit-transition: background-color 0.8s ease-in-out, color 0.8s ease-in-out;
-	-o-transition: background-color 0.8s ease-in-out, color 0.8s ease-in-out;
-	transition: background-color 0.8s ease-in-out, color 0.8s ease-in-out;
+	-webkit-transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out;
+	-o-transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out;
+	transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out;
 }
 
 button.btn:hover {
@@ -330,9 +330,9 @@ button.btn:hover {
 }
 
 .footer_info a {
-	-webkit-transition: all 0.8s ease-in-out;
-	-o-transition: all 0.8s ease-in-out;
-	transition: all 0.8s ease-in-out;
+	-webkit-transition: all 0.4s ease-in-out;
+	-o-transition: all 0.4s ease-in-out;
+	transition: all 0.4s ease-in-out;
 	color: #fff;
 	display: inline-block;
 	padding: 10px;
