@@ -3,6 +3,7 @@ let guessingNum = document.querySelector(".guessing_number");
 let inputNum = document.querySelector(".input_number");
 let chance = document.getElementById("chance");
 let highScore = document.getElementById("highscore");
+let startBtn = document.querySelector(".start");
 
 let randomNum = Math.ceil(Math.random() * 20);
 let totalChance = 20;
@@ -31,7 +32,7 @@ document.querySelector(".check").addEventListener("click", function() {
     if (totalChance > 0 && highScoreNum < 20 && inputNumVal > 0) {
         if (inputNumVal < randomNum) {
             chance.textContent = `${--totalChance}`;
-            guessingNum.textContent = "Too low!";
+            guessingNum.textContent = "Too Low!";
             addAndRemove(shake, totalTime);
         } else if (inputNumVal > randomNum) {
             chance.textContent = `${--totalChance}`;
@@ -42,15 +43,22 @@ document.querySelector(".check").addEventListener("click", function() {
             highScore.textContent = `${++highScoreNum}`;
             addAndRemove(zoom, totalTime * 6);
             guessingNum.textContent = "You Win!";
+            guessingNum.style.fontSize = '24px';
             document.querySelector(".check").disabled = true;
+            /*setInterval(function() {
+                startBtn.classList.add('start_again')
+            }, 1500);*/
+            startBtn.classList.add('start_again')
+            
         }
     }
 });
 
-document.querySelector(".start").addEventListener("click", function() {
+startBtn.addEventListener("click", function() {
     document.querySelector(".check").disabled = false;
     chance.textContent = "20";
     hiddenNum.textContent = "?";
+    guessingNum.style.fontSize = 'initial';
     guessingNum.textContent = "Start guessing...";
     inputNum.value = "";
     randomNum = Math.ceil(Math.random() * 20);

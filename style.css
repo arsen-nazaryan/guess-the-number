@@ -298,6 +298,38 @@ button.btn:hover {
 	color: #000;
 }
 
+.start_again {
+	animation: startAgain 2.5s ease-in;
+	animation-delay: 1.5s;
+}
+
+@keyframes startAgain {
+	0% {
+		color: #fff;
+		transform: scale(1, 1);
+	}
+
+	25% {
+		color: #aac5c8;
+		transform: scale(1.05, 1.05);
+	}
+
+	50% {
+		color: #000;
+		transform: scale(1.1, 1.1);
+	}
+
+	75% {
+		color: #aac5c8;
+		transform: scale(1.05, 1.05);
+	}
+
+	100% {
+		color: #000;
+		transform: scale(1, 1);
+	}
+}
+
 .form_group {
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -319,6 +351,21 @@ button.btn:hover {
 	border: 5px solid #e3dede;
 	padding: 5px 12px;
 	text-align: center;
+}
+
+.score_number span,
+.highscore_number span {
+	font-weight: 700;
+	letter-spacing: 2px;
+	font-size: 17px;
+}
+
+.highscore_number span {
+	color: #c2d9fb;
+}
+
+.score_number span {
+	color: #aac5c8;
 }
 
 .form_group .input_number:focus {
