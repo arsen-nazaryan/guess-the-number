@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="description" content="Guess The Number, Guess My Number, Fun Games, CSS JS Game, codepen, github">
+	<meta name="keywords" content="Guess, The, Number, My Number, Fun, Games, html, CSS, JS, Game, pure JS Game, codepen, github">
+	<meta name="format-detection" content="telephone=no">
+	<meta property="og:image" content="images/og.jpg">
+	<link rel="shortcut icon" href="images/favicon-32.png">
+	<link rel="stylesheet" href="style.css">
+	<title>Guess The Number</title>
+</head>
+
+<body>
+	<header>
+		<button class="start btn">Start Again</button>
+		<p class="top_info">Between 1 and 20</p>
+	</header>
+	<main class="main_content">
+		<section class="top_section">
+			<h1 class="title">Guess My Number!</h1>
+			<p class="hidden_number">?</p>
+		</section>
+		<section class="game_section">
+			<div class="form_group">
+				<input class="input_number" type="number" max="20" min="1">
+				<button class="check btn">Check</button>
+			</div>
+			<div class="game_info">
+				<p class="guessing_number">Start Guessing...</p>
+				<p class="score_number">Chance: <span id="chance">20</span></p>
+				<p class="highscore_number">High Score: <span id="highscore">0</span></p>
+			</div>
+		</section>
+	</main>
+	<footer>
+		<p class="footer_info">
+			<a title="More Fun..." target="_blank" class="my_codepen" href="https://codepen.io/arsen-nazaryan"><img src="images/codepen.png" alt=""></a>
+			<a title="More Games..." target="_blank" class="my_github" href="https://arsen-nazaryan.github.io/"><img src="images/GitHub.png" alt=""></a>
+		</p>
+	</footer>
+</body>
+
+</html>
